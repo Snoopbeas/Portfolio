@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildWest</title>
+  <style>
+    /* Style for the video background */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the video covers the entire screen */
+      z-index: -1; /* Send the video to the background */
+    }
+
+    /* Content on top of the video */
+    .content {
+      position: absolute; /* Positioned relative to the viewport */
+      z-index: 1;
+      text-align: center;
+      top: 0; /* Align content to the top of the screen */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Horizontal centering only */
+      width: 100%; /* Ensure container spans the viewport */
+    }
+
+    /* Image styling */
+    .content img {
+      width: 70%; /* Set width to cover more than 50% of the screen */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Hover zones */
+    .hover-zone {
+      position: fixed;
+      width: 60px; /* Adjust the size of the hover zones */
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.2); /* Optional: To make the hover area visible */
+      cursor: pointer;
+    }
+
+    /* First hover zone */
+    .hover-zone-1 {
+      bottom: 330px;
+      left: 320px;
+    }
+
+    /* Second hover zone */
+    .hover-zone-2 {
+      top: 700px;
+      right: 580px;
+    }
+
+    /* Third hover zone */
+    .hover-zone-3 {
+      top: 680px;
+      left: 440px;
+    }
+
+    /* Fourth hover zone */
+    .hover-zone-4 {
+      bottom: 100px;
+      right: 120px;
+    }
+
+    /* Hidden images */
+    .hover-image {
+      display: none; /* Initially hide the images */
+      position: fixed;
+      z-index: 2;
+      border: 2px solid white; /* Optional: Add a border to the images */
+    }
+
+    /* First hover image */
+    .hover-image-1 {
+      bottom: 460px;
+      left: 350px;
+      width: 100px; /* Set the size of the image */
+      height: auto;
+    }
+
+    /* Second hover image */
+    .hover-image-2 {
+      top: 630px;
+      right: 450px;
+      width: 120px; /* Set the size of the image */
+      height: auto;
+    }
+
+    /* Third hover image */
+    .hover-image-3 {
+      top: 650px;
+      left: 300px;
+      width: 90px; /* Set the size of the image */
+      height: auto;
+    }
+
+    /* Fourth hover image */
+    .hover-image-4 {
+      bottom: 150px;
+      right: 200px;
+      width: 110px; /* Set the size of the image */
+      height: auto;
+    }
+
+    /* Show the images when hovering over the hover zones */
+    .hover-zone-1:hover + .hover-image-1 {
+      display: block;
+    }
+
+    .hover-zone-2:hover + .hover-image-2 {
+      display: block;
+    }
+
+    .hover-zone-3:hover + .hover-image-3 {
+      display: block;
+    }
+
+    .hover-zone-4:hover + .hover-image-4 {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Video element -->
+  <video class="video-background" autoplay loop muted playsinline>
+    <source src="https://private-user-images.githubusercontent.com/202006162/443867890-1fb310ce-7343-4b67-aee7-749c654c0234.MOV?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDcyNjczODMsIm5iZiI6MTc0NzI2NzA4MywicGF0aCI6Ii8yMDIwMDYxNjIvNDQzODY3ODkwLTFmYjMxMGNlLTczNDMtNGI2Ny1hZWU3LTc0OWM2NTRjMDIzNC5NT1Y_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUxNFQyMzU4MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YWU4NDgzOTY2ODRkOTI0M2M1ZmUzMTI1Yzc3NDBjN2Q5ODg5Njg2YTFiMDg2MjQ1NjZlY2FkYzU4ODI3MDY1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.p035OxtOkssSqIA2WJfA5oA5UJveNXsofETlEcWNcLE" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content overlaid on the video -->
+  <div class="content">
+    <!-- Replacing text with an image -->
+    <img src="https://private-user-images.githubusercontent.com/202006162/443857512-cbb78bab-55e3-46d0-951c-41f5ec22b415.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDcyNjc1NjMsIm5iZiI6MTc0NzI2NzI2MywicGF0aCI6Ii8yMDIwMDYxNjIvNDQzODU3NTEyLWNiYjc4YmFiLTU1ZTMtNDZkMC05NTFjLTQxZjVlYzIyYjQxNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUxNVQwMDAxMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZWU1Y2JiMjY2YmJlOGNmZmVlMThmNjY5Y2RmOGQxYmEwYTI0NzAzNzJiNzBjZDRjZWEzOWNkYzkyNmYyMWUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ujfcrq2kgBFCTZ-zCuMDyuXsL4QwVLPUTDlVSuX6CxA" alt="Welcome to The Wild West">
+  </div>
+
+  <!-- First hover zone and image -->
+  <div class="hover-zone hover-zone-1"></div>
+  <img class="hover-image hover-image-1" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm94eXByeHA2NDZkaXhzczF4c3o2MGx6dG1naWdnZmk3ZTVtaHJoMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G2WZbAbJ0rlxG5sjKl/giphy.gif" alt="Hover Image 1">
+
+  <!-- Second hover zone and image -->
+  <div class="hover-zone hover-zone-2"></div>
+  <img class="hover-image hover-image-2" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTZzMTg3YWRxejQ3N2t6eWJvaHN6ODl1aGZ5eTNhNDljd284bzBhMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mZlHRcte0el1LTKQ00/giphy.gif" alt="Hover Image 2">
+
+  <!-- Third hover zone and image -->
+  <div class="hover-zone hover-zone-3"></div>
+  <img class="hover-image hover-image-3" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWUydHZveHJ6NWpnMWVpY3NlZmVmOHBvejdhbWFmNDd2OXhpM3NmayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/brmwhtNzXkqpJpaTkb/giphy.gif" alt="Hover Image 3">
+
+  <!-- Fourth hover zone and image -->
+  <div class="hover-zone hover-zone-4"></div>
+  <img class="hover-image hover-image-4" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExODBvampza2lidjlsMnhpcDYwaDl5cnBleXhyeTl4eXoxdjBqbWF1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XpWJAWGKi4Lvg4n8QO/giphy.gif" alt="Hover Image 4">
+</body>
+</html>
